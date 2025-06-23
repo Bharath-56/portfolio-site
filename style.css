@@ -34,8 +34,8 @@ header {
 }
 
 .profile-pic {
-  width: 140px;
-  height: 160px;
+  width: 200px;
+  height: 200px;
   margin-bottom: 1rem;
   overflow: visible;
 }
@@ -50,7 +50,7 @@ header {
 }
 
 .profile-pic:hover img {
-  transform: scale(1.2);
+  transform: scale(1.05);
   z-index: 10;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
 }
@@ -111,9 +111,10 @@ nav a:hover {
   margin-right: 8px;
 }
 
+/* Resume Button */
 .btn {
-  background-color: var(--primary);
-  color: black; /* Text color */
+
+  color: black; /* Always visible text */
   padding: 0.3rem 0.7rem;
   border: none;
   border-radius: 5px;
@@ -133,17 +134,19 @@ nav a:hover {
   font-size: 0.85rem;
 }
 
+/* ✅ Keep text color locked on hover */
 .btn:hover {
   background-color: #ffcc00;
   transform: scale(1.03);
-  color: black; /* Locks text color on hover */
+  color: black; /* No change on hover */
 }
 
+.btn:hover span,
 .btn:hover i.fa-download {
-  color: black; /* Also locks icon color */
+  color: black; /* Lock icon and text color */
 }
 
-
+/* Project Cards */
 .projects-container {
   display: flex;
   flex-wrap: wrap;
@@ -171,6 +174,26 @@ nav a:hover {
   box-shadow: 0 6px 15px rgba(255, 215, 0, 0.3);
 }
 
+/* Contact Icons */
+.contact-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.contact-icons a {
+  color: var(--primary);
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-icons a:hover {
+  color: white;
+}
+
+/* Footer */
 footer {
   background-color: var(--text-dark);
   color: var(--text-light);
@@ -181,4 +204,3 @@ footer {
   bottom: 0;
   width: 100%;
 }
-
