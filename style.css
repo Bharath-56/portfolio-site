@@ -128,8 +128,8 @@ nav a:hover {
 }
 
 .btn {
-  background: linear-gradient(90deg, #ffdb4d, #ffd700);
-  color: black !important;
+  background-color: var(--primary);
+  color: black;
   padding: 0.4rem 0.8rem;
   border: none;
   border-radius: 6px;
@@ -139,29 +139,25 @@ nav a:hover {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
   width: fit-content;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn i.fa-download {
-  color: black !important;
-}
-
-.btn span {
-  color: black !important;
+  color: black;
 }
 
 .btn:hover {
-  background: linear-gradient(90deg, #ffd700, #ffdb4d);
+  background-color: #ffcc00;
   transform: scale(1.03);
-  color: black !important;
+  color: black;
 }
 
 .btn:hover span,
 .btn:hover i.fa-download {
-  color: black !important;
+  color: black;
 }
 
 .projects-container {
@@ -196,11 +192,12 @@ nav a:hover {
   flex-wrap: wrap;
   gap: 1.2rem;
   margin-top: 1rem;
+  justify-content: center;
 }
 
 .contact-icons a {
   color: var(--primary);
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   transition: color 0.3s;
   text-decoration: none;
 }
