@@ -1,6 +1,6 @@
 :root {
-  --primary: #FFD700;         
-  --background: #1e1e1e;       
+  --primary: #FFD700;
+  --background: #1e1e1e;
   --text-dark: #2f2f2f;
   --text-light: #ffffff;
   --accent: #f0f0f0;
@@ -128,36 +128,39 @@ nav a:hover {
 }
 
 .btn {
-  background-color: var(--primary);
-  color: black;
-  padding: 0.4rem 0.8rem;
+  background-color: #ffdd33;
+  color: #000000;
+  padding: 0.5rem 1rem;
   border: none;
-  border-radius: 6px;
-  font-weight: bold;
-  font-size: 0.85rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  gap: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   width: fit-content;
-  cursor: pointer;
 }
 
 .btn i.fa-download {
-  color: black;
+  color: #000000;
+  font-size: 1rem;
+}
+
+.btn span {
+  color: #000000;
 }
 
 .btn:hover {
-  background-color: #ffcc00;
-  transform: scale(1.03);
-  color: black;
+  background-color: #f5c400;
+  box-shadow: 0 6px 12px rgba(255, 215, 0, 0.4);
+  color: #000000;
 }
 
 .btn:hover span,
 .btn:hover i.fa-download {
-  color: black;
+  color: #000000;
 }
 
 .projects-container {
@@ -192,12 +195,11 @@ nav a:hover {
   flex-wrap: wrap;
   gap: 1.2rem;
   margin-top: 1rem;
-  justify-content: center;
 }
 
 .contact-icons a {
   color: var(--primary);
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   transition: color 0.3s;
   text-decoration: none;
 }
