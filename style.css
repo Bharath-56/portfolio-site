@@ -1,5 +1,6 @@
 :root {
   --primary: #FFD700;         
+  --primary-hover: #e6c200;
   --background: #1e1e1e;       
   --text-dark: #2f2f2f;
   --text-light: #ffffff;
@@ -24,7 +25,6 @@ body {
   line-height: 1.6;
   padding-bottom: 4rem;
 }
-
 
 header {
   background-color: var(--text-dark);
@@ -88,7 +88,6 @@ nav a:hover {
   color: var(--primary);
 }
 
-
 .section {
   padding: 4rem 1rem;
   display: flex;
@@ -129,34 +128,32 @@ nav a:hover {
   margin-right: 8px;
 }
 
-
 .btn {
-  background-color: var(--primary);
-  color: black;
-  padding: 0.4rem 0.8rem;
+  background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+  color: #1e1e1e;
+  padding: 0.5rem 1rem;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   font-weight: bold;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  gap: 0.5rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   width: fit-content;
   cursor: pointer;
 }
 
 .btn i.fa-download {
-  color: black;
+  color: #1e1e1e;
 }
 
 .btn:hover {
-  background-color: #ffcc00;
-  transform: scale(1.03);
+  background: linear-gradient(135deg, var(--primary-hover), var(--primary));
+  transform: scale(1.05);
 }
-
 
 .projects-container {
   display: flex;
@@ -185,7 +182,6 @@ nav a:hover {
   box-shadow: 0 6px 15px rgba(255, 215, 0, 0.3);
 }
 
-
 .contact-icons {
   display: flex;
   flex-wrap: wrap;
@@ -204,7 +200,6 @@ nav a:hover {
   color: white;
 }
 
-
 footer {
   background-color: var(--text-dark);
   color: var(--text-light);
@@ -215,7 +210,6 @@ footer {
   width: 100%;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
-
 
 @media (max-width: 768px) {
   .projects-container {
