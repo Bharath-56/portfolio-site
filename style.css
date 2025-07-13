@@ -1,6 +1,5 @@
 :root {
   --primary: #FFD700;         
-  --primary-hover: #e6c200;
   --background: #1e1e1e;       
   --text-dark: #2f2f2f;
   --text-light: #ffffff;
@@ -129,30 +128,40 @@ nav a:hover {
 }
 
 .btn {
-  background: linear-gradient(135deg, var(--primary), var(--primary-hover));
-  color: #1e1e1e;
-  padding: 0.5rem 1rem;
+  background: linear-gradient(90deg, #ffdb4d, #ffd700);
+  color: black !important;
+  padding: 0.4rem 0.8rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  transition: background 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  gap: 0.4rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
   width: fit-content;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn i.fa-download {
-  color: #1e1e1e;
+  color: black !important;
+}
+
+.btn span {
+  color: black !important;
 }
 
 .btn:hover {
-  background: linear-gradient(135deg, var(--primary-hover), var(--primary));
-  transform: scale(1.05);
+  background: linear-gradient(90deg, #ffd700, #ffdb4d);
+  transform: scale(1.03);
+  color: black !important;
+}
+
+.btn:hover span,
+.btn:hover i.fa-download {
+  color: black !important;
 }
 
 .projects-container {
