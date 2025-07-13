@@ -1,7 +1,7 @@
 :root {
-  --primary: #FFD700;       /* Yellow */
-  --background: #1e1e1e;    /* Dark Grey */
-  --text-dark: #2f2f2f;
+  --primary: #FFD700;       
+  --background: #1e1e1e;   
+  --text-dark: #2f2f2f;     
   --text-light: #ffffff;
   --accent: #f0f0f0;
 }
@@ -34,7 +34,7 @@ header {
 }
 
 .profile-pic {
-  width: 177px;
+  width: 176px;
   height: 200px;
   margin-bottom: 1rem;
   overflow: visible;
@@ -111,10 +111,10 @@ nav a:hover {
   margin-right: 8px;
 }
 
-/* Resume Button */
-.btn {
 
-  color: black; /* Always visible text */
+.btn {
+  background-color: var(--primary);
+  color: black; 
   padding: 0.3rem 0.7rem;
   border: none;
   border-radius: 5px;
@@ -127,6 +127,7 @@ nav a:hover {
   transition: background-color 0.3s ease, transform 0.2s ease;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
   width: fit-content;
+  cursor: pointer;
 }
 
 .btn i.fa-download {
@@ -134,19 +135,17 @@ nav a:hover {
   font-size: 0.85rem;
 }
 
-/* ✅ Keep text color locked on hover */
 .btn:hover {
   background-color: #ffcc00;
   transform: scale(1.03);
-  color: black; /* No change on hover */
+  color: black;
 }
 
-.btn:hover span,
-.btn:hover i.fa-download {
-  color: black; /* Lock icon and text color */
+.btn:hover i.fa-download,
+.btn:hover span {
+  color: black;
 }
 
-/* Project Cards */
 .projects-container {
   display: flex;
   flex-wrap: wrap;
@@ -174,7 +173,7 @@ nav a:hover {
   box-shadow: 0 6px 15px rgba(255, 215, 0, 0.3);
 }
 
-/* Contact Icons */
+
 .contact-icons {
   display: flex;
   flex-wrap: wrap;
@@ -193,7 +192,7 @@ nav a:hover {
   color: white;
 }
 
-/* Footer */
+
 footer {
   background-color: var(--text-dark);
   color: var(--text-light);
