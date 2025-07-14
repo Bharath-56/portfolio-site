@@ -1,11 +1,15 @@
 :root {
-  --primary: #FFD700;
-  --background: #1e1e1e;
-  --text-dark: #2f2f2f;
+  --primary-color: #e6c200; 
+  --background-color: #121212;
+  --card-color: #1e1e1e;
   --text-light: #ffffff;
-  --accent: #f0f0f0;
-  --shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  --text-dark: #000000;
+  --accent: #cccccc;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --border-radius: 12px;
+  --transition: 0.3s ease;
 }
+
 
 * {
   margin: 0;
@@ -19,15 +23,14 @@ html {
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--background);
+  background-color: var(--background-color);
   color: var(--text-light);
   line-height: 1.6;
   padding-bottom: 4rem;
 }
 
 header {
-  background-color: var(--text-dark);
-  color: var(--text-light);
+  background-color: var(--card-color);
   padding: 2rem 1rem;
   text-align: center;
   box-shadow: var(--shadow);
@@ -41,35 +44,35 @@ header {
 }
 
 .profile-pic {
-  width: 160px;
-  height: 170px;
-  margin-bottom: 0.5rem;
-  overflow: visible;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--primary-color);
+  transition: var(--transition);
 }
 
 .profile-pic img {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
-  border: 3px solid var(--primary);
   object-fit: cover;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.profile-pic:hover img {
+.profile-pic:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
 }
 
 .intro-text h1 {
   font-size: 2.2rem;
-  color: var(--primary);
+  color: var(--primary-color);
 }
 
 .intro-text p {
   font-size: 1rem;
   color: var(--accent);
 }
+
 
 nav {
   margin-top: 1rem;
@@ -80,12 +83,14 @@ nav a {
   color: var(--text-light);
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.3s;
+  font-size: 1rem;
+  transition: color var(--transition);
 }
 
 nav a:hover {
-  color: var(--primary);
+  color: var(--primary-color);
 }
+
 
 .section {
   padding: 4rem 1rem;
@@ -94,12 +99,11 @@ nav a:hover {
 }
 
 .section-box {
-  background-color: var(--text-dark);
-  color: var(--text-light);
+  background-color: var(--card-color);
   padding: 2rem;
-  border-radius: 12px;
+  border-left: 5px solid var(--primary-color);
+  border-radius: var(--border-radius);
   box-shadow: var(--shadow);
-  border-left: 6px solid var(--primary);
   max-width: 900px;
   width: 100%;
   display: flex;
@@ -108,119 +112,130 @@ nav a:hover {
 }
 
 .section-box h2 {
-  color: var(--primary);
   font-size: 1.6rem;
-  margin-bottom: 0.5rem;
+  color: var(--primary-color);
 }
 
-.section-box p, .section-box a {
+.section-box p {
   font-size: 1rem;
+  color: var(--accent);
 }
 
 .section-box a {
-  color: var(--primary);
+  font-size: 1rem;
+  color: var(--primary-color);
   text-decoration: underline;
 }
 
-.section-box i {
-  color: var(--primary);
-  margin-right: 8px;
-}
 
 .btn {
-  background-color: #ffdd33;
-  color: #000000;
-  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: var(--text-dark);
+  padding: 0.6rem 1.2rem;
   border: none;
   border-radius: 8px;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: var(--transition);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   width: fit-content;
 }
 
-.btn i.fa-download {
-  color: #000000;
-  font-size: 1rem;
-}
 
+.btn i,
 .btn span {
-  color: #000000;
+  color: var(--text-dark);
 }
 
 .btn:hover {
-  background-color: #f5c400;
-  box-shadow: 0 6px 12px rgba(255, 215, 0, 0.4);
-  color: #000000;
+  background-color: #e6c200;
+  color: var(--text-dark);
+  box-shadow: 0 6px 15px rgba(255, 215, 0, 0.4);
 }
 
-.btn:hover span,
-.btn:hover i.fa-download {
-  color: #000000;
+.btn:hover i,
+.btn:hover span {
+  color: var(--text-dark);
 }
 
-.projects-container {
+
+.projects-container,
+.cert-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.5rem;
   justify-content: space-between;
 }
 
-.project-card {
-  background-color: var(--background);
-  color: var(--text-light);
-  border: 2px solid var(--primary);
-  border-radius: 8px;
+.project-card,
+.cert-card {
+  background-color: var(--background-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
   padding: 1rem;
   flex: 1 1 280px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
 }
 
-.project-card h3 {
-  color: var(--primary);
-  margin-bottom: 0.5rem;
+.project-card:hover,
+.cert-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(255, 215, 0, 0.3);
 }
 
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(255, 215, 0, 0.3);
+.project-card h3 a,
+.cert-card h3 {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  text-decoration: none;
 }
+
+.cert-card p {
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
 
 .contact-icons {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   gap: 1.2rem;
   margin-top: 1rem;
 }
 
 .contact-icons a {
-  color: var(--primary);
-  font-size: 1.5rem;
-  transition: color 0.3s;
-  text-decoration: none;
+  color: var(--primary-color);
+  font-size: 1.6rem;
+  transition: color var(--transition);
 }
 
 .contact-icons a:hover {
-  color: white;
+  color: #ffffff;
 }
 
+
 footer {
-  background-color: var(--text-dark);
+  background-color: var(--card-color);
   color: var(--text-light);
   text-align: center;
   padding: 1rem 0;
   font-size: 0.9rem;
-  position: relative;
-  width: 100%;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+
 @media (max-width: 768px) {
-  .projects-container {
+  .projects-container,
+  .cert-container {
     flex-direction: column;
     align-items: center;
   }
@@ -235,8 +250,8 @@ footer {
   }
 
   .profile-pic {
-    width: 140px;
-    height: 140px;
+    width: 110px;
+    height: 110px;
   }
 
   .section-box {
