@@ -1,5 +1,5 @@
 :root {
-  --primary: #e6c200;
+  --primary: #FFD700;
   --background: #1e1e1e;
   --text-dark: #2f2f2f;
   --text-light: #ffffff;
@@ -36,14 +36,14 @@ header {
 
 .menu-toggle {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: transparent;
+  top: 20px;
+  right: 20px;
+  background: none;
   border: none;
-  color: var(--primary);
   font-size: 1.5rem;
+  color: var(--primary);
   display: none;
-  z-index: 999;
+  cursor: pointer;
 }
 
 .header-content {
@@ -56,7 +56,7 @@ header {
 .profile-pic {
   width: 160px;
   height: 176px;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .profile-pic img {
@@ -83,35 +83,31 @@ header {
   color: var(--accent);
 }
 
-nav.desktop-nav {
-  display: flex;
-  margin-top: 1rem;
-  gap: 1rem;
-}
-
-nav.desktop-nav a,
-nav.mobile-nav a {
+nav a {
+  margin: 0 1rem;
   color: var(--text-light);
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s;
-  padding: 0.4rem 0.8rem;
 }
 
-nav.desktop-nav a:hover,
-nav.mobile-nav a:hover {
+nav a:hover {
   color: var(--primary);
 }
 
-nav.mobile-nav {
-  display: none;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.6rem;
-  margin-top: 1rem;
+.desktop-nav {
+  display: flex;
 }
 
-nav.mobile-nav.show {
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.mobile-nav.show {
   display: flex;
 }
 
@@ -119,6 +115,7 @@ nav.mobile-nav.show {
   padding: 4rem 1rem;
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 
 .section-box {
@@ -133,6 +130,7 @@ nav.mobile-nav.show {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+  text-align: center;
 }
 
 .section-box h2 {
@@ -144,7 +142,8 @@ nav.mobile-nav.show {
 .section-box p,
 .section-box a {
   font-size: 1rem;
-  color: var(--text-light);
+  color: var(--accent);
+  text-align: center;
 }
 
 .section-box a {
@@ -158,13 +157,13 @@ nav.mobile-nav.show {
 }
 
 .btn {
-  background-color: #ffdd33;
+  background-color: #f5c400;
   color: #000000;
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 8px;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -176,11 +175,10 @@ nav.mobile-nav.show {
 .btn i,
 .btn span {
   color: #000000;
-  font-size: 1rem;
 }
 
 .btn:hover {
-  background-color: #f5c400;
+  background-color: #e6ba00;
   box-shadow: 0 6px 12px rgba(255, 215, 0, 0.4);
   color: #000000;
 }
@@ -195,7 +193,8 @@ nav.mobile-nav.show {
 }
 
 .project-card,
-.cert-card {
+.cert-card,
+.skill-category {
   background-color: var(--background);
   color: var(--text-light);
   border: 2px solid var(--primary);
@@ -203,10 +202,12 @@ nav.mobile-nav.show {
   padding: 1rem;
   flex: 1 1 280px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
 }
 
 .project-card h3,
-.cert-card h3 {
+.cert-card h3,
+.skill-category h3 {
   color: var(--primary);
   margin-bottom: 0.5rem;
 }
@@ -217,9 +218,27 @@ nav.mobile-nav.show {
   box-shadow: 0 6px 15px rgba(255, 215, 0, 0.3);
 }
 
-.cert-card p {
+.cert-card p,
+.skill-category ul li {
   font-size: 0.95rem;
   color: var(--accent);
+}
+
+.cert-card a.btn {
+  font-size: 0.85rem;
+}
+
+.skill-category ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skill-category ul li {
+  background-color: #333;
+  border-radius: 5px;
+  padding: 0.3rem 0.6rem;
+  margin: 0.2rem;
+  display: inline-block;
 }
 
 .contact-icons {
@@ -227,6 +246,7 @@ nav.mobile-nav.show {
   flex-wrap: wrap;
   gap: 1.2rem;
   margin-top: 1rem;
+  justify-content: center;
 }
 
 .contact-icons a {
@@ -246,39 +266,17 @@ footer {
   text-align: center;
   padding: 1rem 0;
   font-size: 0.9rem;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
   width: 100%;
-}
-
-.skill-category h3 {
-  color: var(--primary);
-  margin-bottom: 0.5rem;
-}
-
-.skill-category ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  padding-left: 0;
-}
-
-.skill-category li {
-  background-color: var(--primary);
-  color: #000;
-  font-weight: 600;
-  padding: 0.4rem 0.8rem;
-  border-radius: 6px;
-  font-size: 0.9rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 @media (max-width: 768px) {
-  nav.desktop-nav {
-    display: none;
-  }
-
   .menu-toggle {
     display: block;
+  }
+
+  .desktop-nav {
+    display: none;
   }
 
   .projects-container,
@@ -286,6 +284,11 @@ footer {
   .skills-container {
     flex-direction: column;
     align-items: center;
+  }
+
+  nav a {
+    margin: 0.5rem 0;
+    font-size: 1rem;
   }
 
   .intro-text h1 {
