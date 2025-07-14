@@ -166,8 +166,8 @@ nav.desktop-nav a:hover {
 }
 
 .btn {
-  background-color: var(--primary);
-  color: #000;
+  background-color: #e6c200; /* slightly muted yellow */
+  color: #000000; /* text inside button */
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 8px;
@@ -181,15 +181,20 @@ nav.desktop-nav a:hover {
   width: fit-content;
 }
 
-.btn i,
-.btn span {
-  color: #000;
+.btn span,
+.btn i {
+  color: #000000; /* icon and span text */
 }
 
 .btn:hover {
-  background-color: #e6b800;
+  background-color: #d4b000;
   box-shadow: 0 6px 12px rgba(255, 215, 0, 0.4);
-  color: #000;
+  color: #000000;
+}
+
+.btn:hover span,
+.btn:hover i {
+  color: #000000;
 }
 
 .projects-container,
