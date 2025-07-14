@@ -1,5 +1,5 @@
 :root {
-  --primary: #FFD700;
+  --primary: #e6c200;
   --background: #1e1e1e;
   --text-dark: #2f2f2f;
   --text-light: #ffffff;
@@ -35,15 +35,15 @@ header {
 }
 
 .menu-toggle {
+  display: none;
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 1rem;
+  right: 1rem;
   background: none;
   border: none;
   font-size: 1.5rem;
   color: var(--primary);
-  display: none;
-  cursor: pointer;
+  z-index: 1001;
 }
 
 .header-content {
@@ -56,6 +56,7 @@ header {
 .profile-pic {
   width: 160px;
   height: 176px;
+  margin-bottom: 0.5rem;
   overflow: visible;
 }
 
@@ -81,9 +82,14 @@ header {
 .intro-text p {
   font-size: 1rem;
   color: var(--accent);
+  text-align: center;
 }
 
-nav a {
+nav.desktop-nav {
+  margin-top: 1rem;
+}
+
+nav.desktop-nav a {
   margin: 0 1rem;
   color: var(--text-light);
   text-decoration: none;
@@ -91,31 +97,41 @@ nav a {
   transition: color 0.3s;
 }
 
-nav a:hover {
+nav.desktop-nav a:hover {
   color: var(--primary);
 }
 
-.desktop-nav {
-  display: flex;
-}
-
-.mobile-nav {
+nav.mobile-nav {
   display: none;
   flex-direction: column;
   gap: 0.5rem;
   margin-top: 1rem;
+}
+
+nav.mobile-nav.show {
+  display: flex;
+}
+
+nav.mobile-nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background-color: var(--text-dark);
   text-align: center;
 }
 
-.mobile-nav.show {
-  display: flex;
+nav.mobile-nav a:hover {
+  background-color: var(--primary);
+  color: black;
 }
 
 .section {
   padding: 4rem 1rem;
   display: flex;
   justify-content: center;
-  text-align: center;
 }
 
 .section-box {
@@ -139,10 +155,8 @@ nav a:hover {
   margin-bottom: 0.5rem;
 }
 
-.section-box p,
-.section-box a {
+.section-box p, .section-box a {
   font-size: 1rem;
-  color: var(--accent);
   text-align: center;
 }
 
@@ -158,7 +172,7 @@ nav a:hover {
 
 .btn {
   background-color: #f5c400;
-  color: #000000;
+  color: #000000 !important;
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 8px;
@@ -170,31 +184,32 @@ nav a:hover {
   gap: 0.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   width: fit-content;
+  align-self: center;
 }
 
-.btn i,
 .btn span {
-  color: #000000;
+  color: #000000 !important;
+}
+
+.btn i {
+  color: #000000 !important;
+  font-size: 1rem;
 }
 
 .btn:hover {
-  background-color: #e6ba00;
+  background-color: #e6b800;
   box-shadow: 0 6px 12px rgba(255, 215, 0, 0.4);
-  color: #000000;
+  color: #000000 !important;
 }
 
-.projects-container,
-.cert-container,
-.skills-container {
+.projects-container {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  justify-content: space-between;
+  justify-content: center;
 }
 
-.project-card,
-.cert-card,
-.skill-category {
+.project-card {
   background-color: var(--background);
   color: var(--text-light);
   border: 2px solid var(--primary);
@@ -205,21 +220,41 @@ nav a:hover {
   text-align: center;
 }
 
-.project-card h3,
-.cert-card h3,
-.skill-category h3 {
+.project-card h3 {
   color: var(--primary);
   margin-bottom: 0.5rem;
 }
 
-.project-card:hover,
-.cert-card:hover {
+.project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 15px rgba(255, 215, 0, 0.3);
 }
 
-.cert-card p,
-.skill-category ul li {
+.cert-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.cert-card {
+  background-color: var(--background);
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  padding: 1rem;
+  flex: 1 1 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: var(--text-light);
+  text-align: center;
+}
+
+.cert-card h3 {
+  color: var(--primary);
+  margin-bottom: 0.4rem;
+}
+
+.cert-card p {
+  margin-bottom: 0.8rem;
   font-size: 0.95rem;
   color: var(--accent);
 }
@@ -228,17 +263,36 @@ nav a:hover {
   font-size: 0.85rem;
 }
 
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.skill-category {
+  flex: 1 1 200px;
+  background-color: var(--background);
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.skill-category h3 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
 .skill-category ul {
   list-style: none;
   padding: 0;
+  color: var(--accent);
 }
 
-.skill-category ul li {
-  background-color: #333;
-  border-radius: 5px;
-  padding: 0.3rem 0.6rem;
-  margin: 0.2rem;
-  display: inline-block;
+.skill-category li {
+  margin-bottom: 0.5rem;
 }
 
 .contact-icons {
@@ -271,33 +325,21 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
   .desktop-nav {
     display: none;
   }
 
-  .projects-container,
-  .cert-container,
-  .skills-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav a {
-    margin: 0.5rem 0;
-    font-size: 1rem;
-  }
-
-  .intro-text h1 {
-    font-size: 1.8rem;
+  .menu-toggle {
+    display: block;
   }
 
   .profile-pic {
     width: 140px;
     height: 140px;
+  }
+
+  .intro-text h1 {
+    font-size: 1.8rem;
   }
 
   .section-box {
