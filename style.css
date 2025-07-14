@@ -1,15 +1,13 @@
 :root {
-  --primary-color: #e6c200;
-  --background-color: #121212;
-  --card-color: #1e1e1e;
+  --primary: #e6c200;
+  --background: #1e1e1e;
+  --text-dark: #2f2f2f;
   --text-light: #ffffff;
-  --text-dark: #000000;
-  --accent: #cccccc;
-  --shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  --border-radius: 12px;
-  --transition: 0.3s ease;
+  --accent: #f0f0f0;
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
+/
 * {
   margin: 0;
   padding: 0;
@@ -22,15 +20,18 @@ html {
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--background-color);
+  background-color: var(--background);
   color: var(--text-light);
   line-height: 1.6;
   padding-bottom: 4rem;
 }
 
+
 header {
-  background-color: var(--card-color);
-  padding: 2rem 1rem 1rem 1rem;
+  background-color: var(--text-dark);
+  color: var(--text-light);
+  padding: 2rem 1rem;
+  text-align: center;
   box-shadow: var(--shadow);
   position: relative;
 }
@@ -40,102 +41,71 @@ header {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  position: relative;
 }
 
 .profile-pic {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 3px solid var(--primary-color);
-  transition: var(--transition);
+  width: 160px;
+  height: 176px;
+  margin-bottom: 0.5rem;
+  overflow: visible;
 }
 
 .profile-pic img {
   width: 100%;
   height: 100%;
+  border-radius: 50%;
+  border: 3px solid var(--primary);
   object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.profile-pic:hover {
+.profile-pic:hover img {
   transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
 }
 
 .intro-text h1 {
-  font-size: 2rem;
-  color: var(--primary-color);
-  text-align: center;
+  font-size: 2.2rem;
+  color: var(--primary);
 }
 
 .intro-text p {
   font-size: 1rem;
   color: var(--accent);
-  text-align: center;
 }
 
-nav {
+/* Desktop Navigation */
+.desktop-nav {
   margin-top: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5rem;
 }
 
-nav a {
+.desktop-nav a {
+  margin: 0 1rem;
   color: var(--text-light);
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.95rem;
-  padding: 0.3rem 0.8rem;
-  transition: color var(--transition);
+  transition: color 0.3s;
 }
 
-nav a:hover {
-  color: var(--primary-color);
+.desktop-nav a:hover {
+  color: var(--primary);
 }
 
-.menu-toggle {
-  display: none;
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  font-size: 1.6rem;
-  color: var(--primary-color);
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 999;
-}
-
-.mobile-nav {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 1rem;
-  position: absolute;
-  top: 4.5rem;
-  right: 1.5rem;
-  background-color: var(--card-color);
-  padding: 1rem;
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
-  z-index: 998;
-}
 
 .section {
-  padding: 3rem 1rem;
+  padding: 4rem 1rem;
   display: flex;
   justify-content: center;
 }
 
 .section-box {
-  background-color: var(--card-color);
-  padding: 1.5rem;
-  border-left: 5px solid var(--primary-color);
-  border-radius: var(--border-radius);
+  background-color: var(--text-dark);
+  color: var(--text-light);
+  padding: 2rem;
+  border-radius: 12px;
   box-shadow: var(--shadow);
+  border-left: 6px solid var(--primary);
   max-width: 900px;
   width: 100%;
   display: flex;
@@ -144,48 +114,53 @@ nav a:hover {
 }
 
 .section-box h2 {
-  font-size: 1.5rem;
-  color: var(--primary-color);
+  color: var(--primary);
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
 }
 
-.section-box p {
+.section-box p,
+.section-box a {
   font-size: 1rem;
-  color: var(--accent);
 }
 
 .section-box a {
-  font-size: 1rem;
-  color: var(--primary-color);
+  color: var(--primary);
   text-decoration: underline;
 }
 
+.section-box i {
+  color: var(--primary);
+  margin-right: 8px;
+}
+
+
 .btn {
-  background-color: var(--primary-color);
-  color: var(--text-dark);
-  padding: 0.6rem 1.2rem;
+  background-color: var(--primary);
+  color: #000;
+  padding: 0.5rem 1rem;
   border: none;
   border-radius: 8px;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  transition: var(--transition);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   width: fit-content;
 }
 
 .btn i,
 .btn span {
-  color: var(--text-dark);
+  color: #000;
 }
 
 .btn:hover {
-  background-color: #ccad00;
-  color: var(--text-dark);
-  box-shadow: 0 6px 15px rgba(255, 215, 0, 0.4);
+  background-color: #d4b900;
+  box-shadow: 0 6px 12px rgba(255, 215, 0, 0.4);
 }
+
 
 .projects-container,
 .cert-container {
@@ -197,75 +172,130 @@ nav a:hover {
 
 .project-card,
 .cert-card {
-  background-color: var(--background-color);
-  border: 2px solid var(--primary-color);
-  border-radius: 10px;
+  background-color: var(--background);
+  color: var(--text-light);
+  border: 2px solid var(--primary);
+  border-radius: 8px;
   padding: 1rem;
   flex: 1 1 280px;
-  transition: var(--transition);
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card h3,
+.cert-card h3 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.cert-card p {
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+  color: var(--accent);
 }
 
 .project-card:hover,
 .cert-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(255, 215, 0, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(255, 215, 0, 0.3);
 }
 
-.project-card h3 a,
-.cert-card h3 {
-  color: var(--primary-color);
-  font-size: 1.1rem;
-  text-decoration: none;
-}
-
-.cert-card p {
-  color: var(--accent);
-  font-size: 0.9rem;
-}
 
 .contact-icons {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
   gap: 1.2rem;
   margin-top: 1rem;
 }
 
 .contact-icons a {
-  color: var(--primary-color);
+  color: var(--primary);
   font-size: 1.5rem;
-  transition: color var(--transition);
+  transition: color 0.3s;
+  text-decoration: none;
 }
 
 .contact-icons a:hover {
-  color: #ffffff;
+  color: white;
 }
 
+
 footer {
-  background-color: var(--card-color);
+  background-color: var(--text-dark);
   color: var(--text-light);
   text-align: center;
   padding: 1rem 0;
   font-size: 0.9rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  margin-top: 2rem;
+  width: 100%;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
-@media (max-width: 768px) {
-  nav {
-    display: none;
-  }
+/* Toggle Button for Mobile */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--primary);
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 200;
+  cursor: pointer;
+}
 
+
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background-color: #2f2f2f;
+  padding: 1rem;
+  position: absolute;
+  top: 4.5rem;
+  right: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+}
+
+.mobile-nav.show {
+  display: flex;
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+.mobile-nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0.6rem 0;
+  font-weight: 600;
+  text-align: right;
+  padding: 0.5rem;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.mobile-nav a:hover {
+  background-color: #3d3d3d;
+}
+
+
+@media (max-width: 768px) {
   .menu-toggle {
     display: block;
   }
 
-  .mobile-nav {
-    display: flex;
+  .desktop-nav {
+    display: none;
+  }
+
+  .header-content {
+    align-items: center;
+    padding-top: 3.5rem;
   }
 
   .projects-container,
@@ -274,30 +304,21 @@ footer {
     align-items: center;
   }
 
-  .intro-text h1 {
-    font-size: 1.6rem;
+  nav a {
+    margin: 0 0.5rem;
+    font-size: 0.95rem;
   }
 
-  .section {
-    padding: 2rem 1rem;
+  .intro-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .profile-pic {
+    width: 140px;
+    height: 140px;
   }
 
   .section-box {
-    padding: 1.2rem;
-  }
-
-  .btn {
-    font-size: 0.9rem;
-    padding: 0.5rem 1rem;
-  }
-
-  .project-card,
-  .cert-card {
-    width: 100%;
-  }
-
-  .contact-icons {
-    gap: 1rem;
-    flex-wrap: wrap;
+    padding: 1.5rem;
   }
 }
