@@ -30,9 +30,9 @@ body {
 
 header {
   background-color: var(--card-color);
-  padding: 2rem 1rem;
-  text-align: center;
+  padding: 2rem 1rem 1rem 1rem;
   box-shadow: var(--shadow);
+  position: relative;
 }
 
 .header-content {
@@ -97,11 +97,15 @@ nav a:hover {
 
 .menu-toggle {
   display: none;
-  font-size: 1.5rem;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 1.6rem;
   color: var(--primary-color);
   background: none;
   border: none;
   cursor: pointer;
+  z-index: 999;
 }
 
 .mobile-nav {
@@ -110,6 +114,14 @@ nav a:hover {
   align-items: center;
   gap: 1rem;
   margin-top: 1rem;
+  position: absolute;
+  top: 4.5rem;
+  right: 1.5rem;
+  background-color: var(--card-color);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  z-index: 998;
 }
 
 .section {
@@ -250,7 +262,6 @@ footer {
 
   .menu-toggle {
     display: block;
-    margin-top: 1rem;
   }
 
   .mobile-nav {
