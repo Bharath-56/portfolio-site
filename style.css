@@ -4,36 +4,28 @@
   --text-dark: #2f2f2f;
   --text-light: #ffffff;
   --accent: #cccccc;
-  --btn-hover: #e6b800;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --shadow: rgba(255, 215, 0, 0.3);
 }
 
 body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--background);
   color: var(--text-light);
   line-height: 1.6;
-  scroll-behavior: smooth;
 }
 
 header {
-  background-color: #111;
-  padding: 1.5rem 1rem;
-  position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  border-bottom: 2px solid var(--primary);
+  align-items: center;
+  padding: 2rem 1rem;
+  position: relative;
+  background-color: #111;
+  text-align: center;
 }
 
 .menu-toggle {
-  display: none;
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -42,6 +34,7 @@ header {
   font-size: 1.5rem;
   color: var(--primary);
   cursor: pointer;
+  display: none;
   z-index: 1001;
 }
 
@@ -49,7 +42,6 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
 }
 
 .profile-pic {
@@ -58,51 +50,74 @@ header {
   border-radius: 50%;
   overflow: hidden;
   margin-bottom: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .profile-pic img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+  border-radius: 50%;
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px var(--primary);
 }
 
 .intro-text h1 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  color: var(--primary);
+  font-size: 2.5rem;
+  margin: 0.2rem 0;
 }
 
 .intro-text p {
   font-size: 1rem;
   color: var(--accent);
+  text-align: center;
 }
 
 nav.desktop-nav {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.2rem;
   margin-top: 1rem;
-  flex-wrap: wrap;
 }
 
-nav.desktop-nav a,
-nav.mobile-nav a {
+nav.desktop-nav a {
   color: var(--text-light);
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s;
 }
 
-nav.desktop-nav a:hover,
-nav.mobile-nav a:hover {
+nav.desktop-nav a:hover {
   color: var(--primary);
 }
 
 nav.mobile-nav {
   display: none;
   flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
+  text-align: center;
+  gap: 1rem;
+  background-color: #222;
+  padding: 1rem;
   margin-top: 1rem;
+  border-radius: 8px;
+}
+
+nav.mobile-nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem;
+  background-color: var(--text-dark);
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav.mobile-nav a:hover {
+  background-color: var(--primary);
+  color: #000;
 }
 
 nav.mobile-nav.show {
@@ -111,24 +126,25 @@ nav.mobile-nav.show {
 
 .section {
   padding: 4rem 1rem;
+  display: flex;
+  justify-content: center;
   text-align: center;
 }
 
 .section-box {
-  max-width: 900px;
-  margin: 0 auto;
+  max-width: 960px;
+  padding: 2rem;
 }
 
 .section-box h2 {
-  font-size: 2rem;
   margin-bottom: 1rem;
   color: var(--primary);
 }
 
-.section-box p {
-  font-size: 1.1rem;
+.section-box p, .section-box a {
+  font-size: 1rem;
   color: var(--accent);
-  margin-bottom: 1rem;
+  text-align: center;
 }
 
 .btn {
@@ -136,20 +152,22 @@ nav.mobile-nav.show {
   color: #000 !important;
   padding: 0.5rem 1rem;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px var(--shadow);
+  width: fit-content;
+  margin: 1rem auto 0;
 }
 
 .btn:hover {
-  background-color: var(--btn-hover);
-  box-shadow: 0 6px 12px rgba(255, 215, 0, 0.4);
+  background-color: #d4af00;
   color: #000 !important;
+  box-shadow: 0 6px 12px var(--shadow);
 }
 
 .projects-container,
@@ -164,47 +182,43 @@ nav.mobile-nav.show {
 .project-card,
 .cert-card,
 .skill-category {
-  background-color: #2a2a2a;
+  background-color: var(--background);
+  color: var(--text-light);
   border: 2px solid var(--primary);
   border-radius: 8px;
   padding: 1rem;
-  width: 280px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  color: var(--text-light);
+  flex: 1 1 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
 }
 
 .project-card:hover,
 .cert-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(255, 215, 0, 0.3);
+  box-shadow: 0 6px 15px var(--shadow);
 }
 
-.project-card h3,
-.cert-card h3,
-.skill-category h3 {
+.project-card h3 a {
   color: var(--primary);
-  margin-bottom: 0.5rem;
+  text-decoration: none;
 }
 
-.cert-card p {
-  color: var(--accent);
-  font-size: 0.95rem;
-  margin-bottom: 0.8rem;
+.project-card h3 a:hover {
+  text-decoration: underline;
 }
 
 .skill-category ul {
   list-style: none;
   padding: 0;
+  color: var(--accent);
 }
 
-.skill-category li {
+.skill-category ul li {
   background-color: #333;
-  color: var(--accent);
+  border-radius: 5px;
   padding: 0.3rem 0.6rem;
-  border-radius: 4px;
-  margin: 0.3rem;
+  margin: 0.2rem;
   display: inline-block;
-  font-size: 0.9rem;
 }
 
 .contact-icons {
@@ -212,22 +226,22 @@ nav.mobile-nav.show {
   justify-content: center;
   gap: 1.5rem;
   margin-top: 1rem;
+  font-size: 1.5rem;
 }
 
 .contact-icons a {
-  color: var(--primary);
-  font-size: 1.5rem;
+  color: var(--text-light);
   transition: color 0.3s;
 }
 
 .contact-icons a:hover {
-  color: #fff;
+  color: var(--primary);
 }
 
 footer {
-  padding: 2rem 1rem;
-  text-align: center;
+  padding: 1rem;
   background-color: #111;
+  text-align: center;
   color: var(--accent);
   font-size: 0.9rem;
 }
@@ -242,26 +256,15 @@ footer {
   }
 
   .profile-pic {
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
   }
 
   .intro-text h1 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
-  .projects-container,
-  .cert-container,
-  .skills-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .section {
-    padding: 3rem 1rem;
-  }
-
-  .btn {
-    margin: 0 auto;
+  .section-box {
+    padding: 1.5rem;
   }
 }
