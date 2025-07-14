@@ -1,173 +1,145 @@
 :root {
-  --primary: #e6c200;
+  --primary: #FFD700;
   --background: #1e1e1e;
   --text-dark: #2f2f2f;
   --text-light: #ffffff;
-  --accent: #cccccc;
-  --shadow: rgba(255, 215, 0, 0.3);
+  --accent: #c0c0c0;
 }
 
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
   background-color: var(--background);
   color: var(--text-light);
-  line-height: 1.6;
 }
 
 header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem 1rem;
+  background-color: var(--background);
+  padding: 1rem;
   position: relative;
-  background-color: #111;
-  text-align: center;
 }
 
 .menu-toggle {
+  display: none;
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 20px;
+  right: 20px;
   background: none;
   border: none;
   font-size: 1.5rem;
   color: var(--primary);
   cursor: pointer;
-  display: none;
   z-index: 1001;
 }
 
 .header-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
 }
 
 .profile-pic {
   width: 160px;
   height: 160px;
-  border-radius: 50%;
+  margin: 0 auto 1rem;
   overflow: hidden;
-  margin-bottom: 1rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);
 }
 
 .profile-pic img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
-  border-radius: 50%;
-}
-
-.profile-pic:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px var(--primary);
 }
 
 .intro-text h1 {
-  font-size: 2.5rem;
-  margin: 0.2rem 0;
+  font-size: 2.2rem;
+  color: var(--primary);
+  margin: 0.5rem 0;
 }
 
 .intro-text p {
-  font-size: 1rem;
   color: var(--accent);
-  text-align: center;
+  font-size: 1rem;
 }
 
-nav.desktop-nav {
+.desktop-nav {
   display: flex;
-  gap: 1.2rem;
+  justify-content: center;
   margin-top: 1rem;
+  flex-wrap: wrap;
 }
 
-nav.desktop-nav a {
-  color: var(--text-light);
+.desktop-nav a,
+.mobile-nav a {
+  margin: 0.5rem 1rem;
   text-decoration: none;
   font-weight: 600;
+  color: var(--text-light);
   transition: color 0.3s;
 }
 
-nav.desktop-nav a:hover {
+.desktop-nav a:hover,
+.mobile-nav a:hover {
   color: var(--primary);
 }
 
-nav.mobile-nav {
+.mobile-nav {
   display: none;
   flex-direction: column;
-  text-align: center;
-  gap: 1rem;
-  background-color: #222;
-  padding: 1rem;
-  margin-top: 1rem;
-  border-radius: 8px;
+  align-items: center;
+  background: #111;
+  padding: 1rem 0;
 }
 
-nav.mobile-nav a {
-  color: var(--text-light);
-  text-decoration: none;
-  font-weight: 600;
-  padding: 0.5rem;
-  background-color: var(--text-dark);
-  border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-nav.mobile-nav a:hover {
-  background-color: var(--primary);
-  color: #000;
-}
-
-nav.mobile-nav.show {
+.mobile-nav.show {
   display: flex;
 }
 
 .section {
   padding: 4rem 1rem;
-  display: flex;
-  justify-content: center;
   text-align: center;
 }
 
 .section-box {
-  max-width: 960px;
-  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.section-box p {
+  text-align: center;
+  color: var(--accent);
+  line-height: 1.7;
 }
 
 .section-box h2 {
-  margin-bottom: 1rem;
+  font-size: 2rem;
   color: var(--primary);
-}
-
-.section-box p, .section-box a {
-  font-size: 1rem;
-  color: var(--accent);
-  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
 .btn {
   background-color: var(--primary);
   color: #000 !important;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
+  padding: 0.6rem 1.2rem;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 0.5rem;
-  box-shadow: 0 4px 8px var(--shadow);
-  width: fit-content;
-  margin: 1rem auto 0;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
+  margin-top: 1rem;
 }
 
 .btn:hover {
-  background-color: #d4af00;
+  background-color: #e6b800;
   color: #000 !important;
-  box-shadow: 0 6px 12px var(--shadow);
 }
 
 .projects-container,
@@ -175,27 +147,27 @@ nav.mobile-nav.show {
 .skills-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 2rem;
   justify-content: center;
+  margin-top: 2rem;
 }
 
 .project-card,
 .cert-card,
 .skill-category {
-  background-color: var(--background);
-  color: var(--text-light);
+  background-color: #2a2a2a;
   border: 2px solid var(--primary);
-  border-radius: 8px;
   padding: 1rem;
-  flex: 1 1 280px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+  width: 280px;
   text-align: center;
+  transition: 0.3s ease;
 }
 
 .project-card:hover,
 .cert-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 15px var(--shadow);
+  box-shadow: 0 6px 12px rgba(255, 215, 0, 0.3);
 }
 
 .project-card h3 a {
@@ -203,8 +175,19 @@ nav.mobile-nav.show {
   text-decoration: none;
 }
 
-.project-card h3 a:hover {
-  text-decoration: underline;
+.cert-card h3 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.cert-card p {
+  margin: 0.5rem 0;
+  color: var(--accent);
+}
+
+.skill-category h3 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
 }
 
 .skill-category ul {
@@ -216,34 +199,32 @@ nav.mobile-nav.show {
 .skill-category ul li {
   background-color: #333;
   border-radius: 5px;
-  padding: 0.3rem 0.6rem;
-  margin: 0.2rem;
+  padding: 0.4rem 0.8rem;
+  margin: 0.3rem;
   display: inline-block;
 }
 
 .contact-icons {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
-  margin-top: 1rem;
+  gap: 1rem;
   font-size: 1.5rem;
 }
 
 .contact-icons a {
-  color: var(--text-light);
-  transition: color 0.3s;
+  color: var(--primary);
+  transition: transform 0.3s ease;
 }
 
 .contact-icons a:hover {
-  color: var(--primary);
+  transform: scale(1.2);
 }
 
 footer {
-  padding: 1rem;
-  background-color: #111;
   text-align: center;
+  padding: 2rem 1rem;
+  background-color: #111;
   color: var(--accent);
-  font-size: 0.9rem;
 }
 
 @media (max-width: 768px) {
@@ -256,15 +237,22 @@ footer {
   }
 
   .profile-pic {
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
   }
 
   .intro-text h1 {
     font-size: 1.8rem;
   }
 
-  .section-box {
-    padding: 1.5rem;
+  .section {
+    padding: 2.5rem 1rem;
+  }
+
+  .projects-container,
+  .cert-container,
+  .skills-container {
+    flex-direction: column;
+    align-items: center;
   }
 }
