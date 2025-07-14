@@ -1,5 +1,5 @@
 :root {
-  --primary: #e6c200;
+  --primary: #FFD700;
   --background: #1e1e1e;
   --text-dark: #2f2f2f;
   --text-light: #ffffff;
@@ -36,13 +36,13 @@ header {
 
 .menu-toggle {
   display: none;
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-size: 1.5rem;
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  color: var(--primary);
   z-index: 1001;
 }
 
@@ -55,23 +55,16 @@ header {
 
 .profile-pic {
   width: 160px;
-  height: 176px;
-  margin-bottom: 0.5rem;
-  overflow: visible;
+  height: 160px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 3px solid var(--primary);
 }
 
 .profile-pic img {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
-  border: 3px solid var(--primary);
   object-fit: cover;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.profile-pic:hover img {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
 }
 
 .intro-text h1 {
@@ -85,53 +78,46 @@ header {
   text-align: center;
 }
 
-nav.desktop-nav {
+nav {
   margin-top: 1rem;
 }
 
-nav.desktop-nav a {
-  margin: 0 1rem;
+.desktop-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.desktop-nav a,
+.mobile-nav a {
   color: var(--text-light);
   text-decoration: none;
   font-weight: 600;
+  font-size: 1rem;
   transition: color 0.3s;
 }
 
-nav.desktop-nav a:hover {
+.desktop-nav a:hover,
+.mobile-nav a:hover {
   color: var(--primary);
 }
 
-nav.mobile-nav {
+.mobile-nav {
   display: none;
   flex-direction: column;
+  align-items: center;
   gap: 0.5rem;
-  margin-top: 1rem;
+  padding: 1rem 0;
 }
 
-nav.mobile-nav.show {
+.mobile-nav.show {
   display: flex;
-}
-
-nav.mobile-nav a {
-  color: var(--text-light);
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  background-color: var(--text-dark);
-  text-align: center;
-}
-
-nav.mobile-nav a:hover {
-  background-color: var(--primary);
-  color: black;
 }
 
 .section {
   padding: 4rem 1rem;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .section-box {
@@ -142,7 +128,7 @@ nav.mobile-nav a:hover {
   box-shadow: var(--shadow);
   border-left: 6px solid var(--primary);
   max-width: 900px;
-  width: 100%;
+  width: fit-content;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
@@ -171,8 +157,8 @@ nav.mobile-nav a:hover {
 }
 
 .btn {
-  background-color: #f5c400;
-  color: #000000 !important;
+  background-color: var(--primary);
+  color: #000000;
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 8px;
@@ -182,125 +168,76 @@ nav.mobile-nav a:hover {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--shadow);
+  justify-content: center;
   width: fit-content;
   align-self: center;
 }
 
+.btn i,
 .btn span {
-  color: #000000 !important;
-}
-
-.btn i {
-  color: #000000 !important;
-  font-size: 1rem;
+  color: #000000;
 }
 
 .btn:hover {
-  background-color: #e6b800;
-  box-shadow: 0 6px 12px rgba(255, 215, 0, 0.4);
-  color: #000000 !important;
+  background-color: #e6c200;
+  color: #000000;
 }
 
-.projects-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.project-card {
-  background-color: var(--background);
-  color: var(--text-light);
-  border: 2px solid var(--primary);
-  border-radius: 8px;
-  padding: 1rem;
-  flex: 1 1 280px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
-}
-
-.project-card h3 {
-  color: var(--primary);
-  margin-bottom: 0.5rem;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(255, 215, 0, 0.3);
-}
-
-.cert-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.cert-card {
-  background-color: var(--background);
-  border: 2px solid var(--primary);
-  border-radius: 8px;
-  padding: 1rem;
-  flex: 1 1 280px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  color: var(--text-light);
-  text-align: center;
-}
-
-.cert-card h3 {
-  color: var(--primary);
-  margin-bottom: 0.4rem;
-}
-
-.cert-card p {
-  margin-bottom: 0.8rem;
-  font-size: 0.95rem;
-  color: var(--accent);
-}
-
-.cert-card a.btn {
-  font-size: 0.85rem;
-}
-
+.projects-container,
+.cert-container,
 .skills-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1rem;
   justify-content: center;
-  margin-top: 1rem;
+  align-items: flex-start;
 }
 
+.project-card,
+.cert-card,
 .skill-category {
-  flex: 1 1 200px;
   background-color: var(--background);
   border: 2px solid var(--primary);
   border-radius: 8px;
   padding: 1rem;
-  text-align: center;
+  color: var(--text-light);
+  flex: 1 1 fit-content;
+  text-align: left;
+  min-width: 250px;
+  max-width: 100%;
 }
 
+.project-card h3,
+.cert-card h3,
 .skill-category h3 {
   color: var(--primary);
   margin-bottom: 0.5rem;
 }
 
-.skill-category ul {
-  list-style: none;
-  padding: 0;
+.cert-card p,
+.skill-category ul li {
+  font-size: 0.95rem;
   color: var(--accent);
 }
 
-.skill-category li {
-  margin-bottom: 0.5rem;
+.skill-category ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.skill-category ul li::before {
+  content: '▹';
+  color: var(--primary);
+  padding-right: 0.5rem;
 }
 
 .contact-icons {
   display: flex;
   flex-wrap: wrap;
   gap: 1.2rem;
-  margin-top: 1rem;
   justify-content: center;
+  margin-top: 1rem;
 }
 
 .contact-icons a {
@@ -320,7 +257,6 @@ footer {
   text-align: center;
   padding: 1rem 0;
   font-size: 0.9rem;
-  width: 100%;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
@@ -333,16 +269,30 @@ footer {
     display: block;
   }
 
+  .intro-text h1 {
+    font-size: 1.8rem;
+  }
+
   .profile-pic {
     width: 140px;
     height: 140px;
   }
 
-  .intro-text h1 {
-    font-size: 1.8rem;
-  }
-
   .section-box {
     padding: 1.5rem;
+    width: fit-content;
+  }
+
+  .projects-container,
+  .cert-container,
+  .skills-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-card,
+  .cert-card,
+  .skill-category {
+    width: fit-content;
   }
 }
