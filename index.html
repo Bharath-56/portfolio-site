@@ -5,16 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bharath S M | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
+
   <header>
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
       <i class="fas fa-bars"></i>
     </button>
+
     <div class="header-content">
       <div class="profile-pic">
         <img src="./your-image.jpg" alt="Bharath S M Profile Picture" />
@@ -23,6 +22,8 @@
         <h1>Bharath S M</h1>
         <p>ECE Student | Developer | Tech Enthusiast</p>
       </div>
+
+     
       <nav class="desktop-nav">
         <a href="#about">About</a>
         <a href="#resume">Resume</a>
@@ -30,13 +31,15 @@
         <a href="#certifications">Certifications</a>
         <a href="#contact">Contact</a>
       </nav>
-      <div class="mobile-nav" id="mobileNav">
+
+     
+      <nav class="mobile-nav" id="mobileNav">
         <a href="#about">About</a>
         <a href="#resume">Resume</a>
         <a href="#projects">Projects</a>
         <a href="#certifications">Certifications</a>
         <a href="#contact">Contact</a>
-      </div>
+      </nav>
     </div>
   </header>
 
@@ -51,7 +54,7 @@
     <div class="section-box">
       <h2>Resume</h2>
       <p>You can download my latest resume here:</p>
-      <a href="./bharath_final.pdf" class="btn" download title="Download Resume PDF">
+      <a href="./bharath_final.pdf" class="btn" download>
         <i class="fas fa-download"></i>
         <span>Download Resume</span>
       </a>
@@ -64,11 +67,11 @@
       <div class="projects-container">
         <div class="project-card">
           <h3><a href="https://github.com/Bharath-56/quickreserve" target="_blank">QuickReserve</a></h3>
-          <p>Train ticket booking app using Node.js, Express, PostgreSQL, and JS. Includes login, email verification, search, and admin dashboard.</p>
+          <p>Full-stack Train Ticket Booking web app using Node.js, Express, PostgreSQL, and vanilla JavaScript. Features include secure login, email verification, search, and admin dashboard.</p>
         </div>
         <div class="project-card">
           <h3><a href="https://github.com/Bharath-56/Project_Management_tool" target="_blank">Project Management Tool</a></h3>
-          <p>Management tool with task boards, real-time chat, and role-based access using WebSockets, PostgreSQL, and Node.js.</p>
+          <p>Lightweight management tool using Node.js, Express, PostgreSQL, WebSockets, and JS. Features task boards, real-time chat, Gantt charts, and role-based access.</p>
         </div>
       </div>
     </div>
@@ -87,9 +90,9 @@
           </a>
         </div>
         <div class="cert-card">
-          <h3>Introduction to Computers & OS Security</h3>
+          <h3>Intro to Computers & OS Security</h3>
           <p>COURSERA | July 2025</p>
-          <a href="./a.png" class="btn" target="_blank">
+          <a href="./b.png" class="btn" target="_blank">
             <i class="fas fa-external-link-alt"></i>
             <span>View Certificate</span>
           </a>
@@ -97,7 +100,7 @@
         <div class="cert-card">
           <h3>Linux for Beginners</h3>
           <p>Infosys Springboard | Nov 2024</p>
-          <a href="./b.png" class="btn" target="_blank">
+          <a href="./c.png" class="btn" target="_blank">
             <i class="fas fa-external-link-alt"></i>
             <span>View Certificate</span>
           </a>
@@ -118,11 +121,11 @@
     <div class="section-box">
       <h2>Contact</h2>
       <div class="contact-icons">
-        <a href="mailto:bharathmanu1235@gmail.com"><i class="fas fa-envelope"></i></a>
-        <a href="https://github.com/Bharath-56"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/bharathsm0304"><i class="fab fa-linkedin"></i></a>
-        <a href="https://wa.me/918073293765"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://www.instagram.com/_bharath_kuruba_"><i class="fab fa-instagram"></i></a>
+        <a href="mailto:bharathmanu1235@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/Bharath-56" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/bharathsm0304" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://wa.me/918073293765" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/_bharath_kuruba_" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
   </section>
@@ -132,11 +135,13 @@
   </footer>
 
   <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const mobileNav = document.getElementById('mobileNav');
-    menuToggle.addEventListener('click', () => {
-      mobileNav.classList.toggle('show');
+    const toggleBtn = document.getElementById("menuToggle");
+    const mobileNav = document.getElementById("mobileNav");
+
+    toggleBtn.addEventListener("click", () => {
+      mobileNav.classList.toggle("show");
     });
   </script>
+
 </body>
 </html>
