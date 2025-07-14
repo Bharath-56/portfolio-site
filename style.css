@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #e6c200; 
+  --primary-color: #e6c200;
   --background-color: #121212;
   --card-color: #1e1e1e;
   --text-light: #ffffff;
@@ -9,7 +9,6 @@
   --border-radius: 12px;
   --transition: 0.3s ease;
 }
-
 
 * {
   margin: 0;
@@ -44,8 +43,8 @@ header {
 }
 
 .profile-pic {
-  width: 140px;
-  height: 140px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   overflow: hidden;
   border: 3px solid var(--primary-color);
@@ -64,26 +63,31 @@ header {
 }
 
 .intro-text h1 {
-  font-size: 2.2rem;
+  font-size: 2rem;
   color: var(--primary-color);
+  text-align: center;
 }
 
 .intro-text p {
   font-size: 1rem;
   color: var(--accent);
+  text-align: center;
 }
-
 
 nav {
   margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 nav a {
-  margin: 0 1rem;
   color: var(--text-light);
   text-decoration: none;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.95rem;
+  padding: 0.3rem 0.8rem;
   transition: color var(--transition);
 }
 
@@ -91,16 +95,15 @@ nav a:hover {
   color: var(--primary-color);
 }
 
-
 .section {
-  padding: 4rem 1rem;
+  padding: 3rem 1rem;
   display: flex;
   justify-content: center;
 }
 
 .section-box {
   background-color: var(--card-color);
-  padding: 2rem;
+  padding: 1.5rem;
   border-left: 5px solid var(--primary-color);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
@@ -112,7 +115,7 @@ nav a:hover {
 }
 
 .section-box h2 {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: var(--primary-color);
 }
 
@@ -126,7 +129,6 @@ nav a:hover {
   color: var(--primary-color);
   text-decoration: underline;
 }
-
 
 .btn {
   background-color: var(--primary-color);
@@ -145,29 +147,22 @@ nav a:hover {
   width: fit-content;
 }
 
-
 .btn i,
 .btn span {
   color: var(--text-dark);
 }
 
 .btn:hover {
-  background-color: #e6c200;
+  background-color: #ccad00;
   color: var(--text-dark);
   box-shadow: 0 6px 15px rgba(255, 215, 0, 0.4);
 }
-
-.btn:hover i,
-.btn:hover span {
-  color: var(--text-dark);
-}
-
 
 .projects-container,
 .cert-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 1rem;
   justify-content: space-between;
 }
 
@@ -202,7 +197,6 @@ nav a:hover {
   font-size: 0.9rem;
 }
 
-
 .contact-icons {
   display: flex;
   flex-wrap: wrap;
@@ -214,14 +208,13 @@ nav a:hover {
 
 .contact-icons a {
   color: var(--primary-color);
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   transition: color var(--transition);
 }
 
 .contact-icons a:hover {
   color: #ffffff;
 }
-
 
 footer {
   background-color: var(--card-color);
@@ -230,31 +223,45 @@ footer {
   padding: 1rem 0;
   font-size: 0.9rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 2rem;
 }
 
-
 @media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .projects-container,
   .cert-container {
     flex-direction: column;
     align-items: center;
   }
 
-  nav a {
-    margin: 0 0.5rem;
-    font-size: 0.95rem;
-  }
-
   .intro-text h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
-  .profile-pic {
-    width: 110px;
-    height: 110px;
+  .section {
+    padding: 2rem 1rem;
   }
 
   .section-box {
-    padding: 1.5rem;
+    padding: 1.2rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .project-card,
+  .cert-card {
+    width: 100%;
+  }
+
+  .contact-icons {
+    gap: 1rem;
+    flex-wrap: wrap;
   }
 }
