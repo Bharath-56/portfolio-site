@@ -1,5 +1,5 @@
 :root {
-  --primary: #ffcc00;
+  --primary: #e6c200;
   --background: #1e1e1e;
   --text-dark: #2f2f2f;
   --text-light: #ffffff;
@@ -35,16 +35,15 @@ header {
 }
 
 .menu-toggle {
-  display: none;
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: none;
+  background: transparent;
   border: none;
-  color: var(--text-light);
+  color: var(--primary);
   font-size: 1.5rem;
-  cursor: pointer;
-  z-index: 1001;
+  display: none;
+  z-index: 999;
 }
 
 .header-content {
@@ -57,8 +56,7 @@ header {
 .profile-pic {
   width: 160px;
   height: 176px;
-  margin-bottom: 0.5rem;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .profile-pic img {
@@ -86,42 +84,34 @@ header {
 }
 
 nav.desktop-nav {
+  display: flex;
   margin-top: 1rem;
+  gap: 1rem;
 }
 
-nav.desktop-nav a {
-  margin: 0 1rem;
+nav.desktop-nav a,
+nav.mobile-nav a {
   color: var(--text-light);
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s;
+  padding: 0.4rem 0.8rem;
 }
 
-nav.desktop-nav a:hover {
+nav.desktop-nav a:hover,
+nav.mobile-nav a:hover {
   color: var(--primary);
 }
 
-.mobile-nav {
+nav.mobile-nav {
   display: none;
   flex-direction: column;
-  background-color: var(--text-dark);
-  position: absolute;
-  top: 100%;
-  right: 1rem;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: var(--shadow);
-  z-index: 1000;
+  align-items: flex-end;
+  gap: 0.6rem;
+  margin-top: 1rem;
 }
 
-.mobile-nav a {
-  color: var(--text-light);
-  text-decoration: none;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.mobile-nav.show {
+nav.mobile-nav.show {
   display: flex;
 }
 
@@ -151,8 +141,10 @@ nav.desktop-nav a:hover {
   margin-bottom: 0.5rem;
 }
 
-.section-box p, .section-box a {
+.section-box p,
+.section-box a {
   font-size: 1rem;
+  color: var(--text-light);
 }
 
 .section-box a {
@@ -166,13 +158,13 @@ nav.desktop-nav a:hover {
 }
 
 .btn {
-  background-color: #e6c200; /* slightly muted yellow */
-  color: #000000; /* text inside button */
+  background-color: #ffdd33;
+  color: #000000;
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 8px;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -181,19 +173,15 @@ nav.desktop-nav a:hover {
   width: fit-content;
 }
 
-.btn span,
-.btn i {
-  color: #000000; /* icon and span text */
+.btn i,
+.btn span {
+  color: #000000;
+  font-size: 1rem;
 }
 
 .btn:hover {
-  background-color: #d4b000;
+  background-color: #f5c400;
   box-shadow: 0 6px 12px rgba(255, 215, 0, 0.4);
-  color: #000000;
-}
-
-.btn:hover span,
-.btn:hover i {
   color: #000000;
 }
 
@@ -207,40 +195,31 @@ nav.desktop-nav a:hover {
 }
 
 .project-card,
-.cert-card,
-.skill-category {
+.cert-card {
   background-color: var(--background);
+  color: var(--text-light);
   border: 2px solid var(--primary);
   border-radius: 8px;
   padding: 1rem;
   flex: 1 1 280px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  color: var(--text-light);
-}
-
-.project-card:hover,
-.cert-card:hover,
-.skill-category:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(255, 215, 0, 0.3);
 }
 
 .project-card h3,
-.cert-card h3,
-.skill-category h3 {
+.cert-card h3 {
   color: var(--primary);
   margin-bottom: 0.5rem;
 }
 
-.cert-card p,
-.skill-category ul li {
-  font-size: 0.95rem;
-  color: var(--accent);
+.project-card:hover,
+.cert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(255, 215, 0, 0.3);
 }
 
-.skill-category ul {
-  list-style: disc inside;
-  padding-left: 1rem;
+.cert-card p {
+  font-size: 0.95rem;
+  color: var(--accent);
 }
 
 .contact-icons {
@@ -267,18 +246,46 @@ footer {
   text-align: center;
   padding: 1rem 0;
   font-size: 0.9rem;
-  position: relative;
-  width: 100%;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  width: 100%;
+}
+
+.skill-category h3 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.skill-category ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-left: 0;
+}
+
+.skill-category li {
+  background-color: var(--primary);
+  color: #000;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
 }
 
 @media (max-width: 768px) {
+  nav.desktop-nav {
+    display: none;
+  }
+
   .menu-toggle {
     display: block;
   }
 
-  nav.desktop-nav {
-    display: none;
+  .projects-container,
+  .cert-container,
+  .skills-container {
+    flex-direction: column;
+    align-items: center;
   }
 
   .intro-text h1 {
@@ -292,12 +299,5 @@ footer {
 
   .section-box {
     padding: 1.5rem;
-  }
-
-  .projects-container,
-  .cert-container,
-  .skills-container {
-    flex-direction: column;
-    align-items: center;
   }
 }
