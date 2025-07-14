@@ -144,10 +144,11 @@ nav.mobile-nav a:hover {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   border-left: 6px solid var(--primary);
   max-width: 900px;
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+  margin: auto;
 }
 
 .section-box h2 {
@@ -175,12 +176,10 @@ nav.mobile-nav a:hover {
   align-items: center;
   gap: 0.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  width: fit-content;
   align-self: center;
 }
 
-.btn i,
-.btn span {
+.btn i, .btn span {
   color: #000000 !important;
 }
 
@@ -189,14 +188,16 @@ nav.mobile-nav a:hover {
   box-shadow: 0 6px 12px rgba(255, 215, 0, 0.4);
 }
 
-.projects-container {
+.projects-container,
+.cert-container,
+.skills-container {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
 }
 
-.project-card {
+.project-card, .cert-card, .skill-category {
   background-color: var(--background);
   color: var(--text-light);
   border: 2px solid var(--primary);
@@ -207,65 +208,19 @@ nav.mobile-nav a:hover {
   text-align: center;
 }
 
-.project-card h3 {
+.project-card h3, .cert-card h3, .skill-category h3 {
   color: var(--primary);
   margin-bottom: 0.5rem;
 }
 
-.project-card:hover {
+.project-card:hover, .cert-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 15px rgba(255, 215, 0, 0.3);
 }
 
-.cert-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.cert-card {
-  background-color: var(--background);
-  border: 2px solid var(--primary);
-  border-radius: 8px;
-  padding: 1rem;
-  flex: 1 1 280px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  color: var(--text-light);
-  text-align: center;
-}
-
-.cert-card h3 {
-  color: var(--primary);
-  margin-bottom: 0.4rem;
-}
-
-.cert-card p {
-  margin-bottom: 0.8rem;
+.cert-card p, .skill-category ul li {
   font-size: 0.95rem;
   color: var(--accent);
-}
-
-.skills-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-  margin-top: 1rem;
-}
-
-.skill-category {
-  flex: 1 1 200px;
-  background-color: var(--background);
-  border: 2px solid var(--primary);
-  border-radius: 8px;
-  padding: 1rem;
-  text-align: center;
-}
-
-.skill-category h3 {
-  color: var(--primary);
-  margin-bottom: 0.5rem;
 }
 
 .skill-category ul {
