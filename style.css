@@ -213,28 +213,36 @@ body {
 }
 
 .education-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-top: 1.5rem;
-  justify-content: center;
+  justify-items: center;
 }
 
 .education-card {
   background-color: #0B3C5D;
   padding: 1.2rem;
   border-radius: 10px;
-  flex: 1 1 calc(33.33% - 2rem);
-  max-width: 300px;
   border: 1px solid #328CC1;
-  text-align: left;
+  width: 100%;
+  max-width: 300px;
+  color: #FEFFFF;
 }
 
-.education-card h3 {
-  color: #D9B310;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+@media screen and (max-width: 992px) {
+  .education-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
+
+
+@media screen and (max-width: 600px) {
+  .education-container {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 .cert-container {
   display: flex;
