@@ -2,126 +2,49 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bharath S M | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
 
-  <header>
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
-      <i class="fas fa-bars"></i>
-    </button>
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-title">Portfolio</div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#certifications">Certificates</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <div class="header-content">
-      <div class="profile-pic">
-        <img src="./your-image.jpg" alt="Bharath S M Profile Picture" />
-      </div>
-      <div class="intro-text">
-        <h1 class="highlight-name">Bharath S M</h1>
-        <p>ECE Student | Developer | Tech Enthusiast</p>
-      </div>
-
-      <nav class="desktop-nav">
-        <a href="#about">About</a>
-        <a href="#resume">Resume</a>
-        <a href="#projects">Projects</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
-      <nav class="mobile-nav" id="mobileNav">
-        <a href="#about">About</a>
-        <a href="#resume">Resume</a>
-        <a href="#projects">Projects</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-      </nav>
+  <header class="hero">
+    <div class="hero-content">
+      <img src="./your-image.jpg" alt="Profile" class="hero-img" />
+      <h1 class="hero-name">Bharath S M</h1>
+      <p class="hero-subtitle">
+        <span>ECE Student</span> | <span>Developer</span> | <span>Tech Enthusiast</span>
+      </p>
+      <a href="./bharath_final.pdf" class="btn" download>
+        <i class="fas fa-download"></i> Download Resume
+      </a>
     </div>
   </header>
-
+  
   <section id="about" class="section">
     <div class="section-box">
       <h2>About Me</h2>
-      <p>Hello, I’m Bharath S M, a passionate Electronics and Communication Engineering student with a strong interest in full-stack development and software systems. I specialize in building practical, user-focused applications and enjoy combining technical knowledge with creative problem-solving to develop impactful solutions.</p>
-    </div>
-  </section>
-
-  <section id="resume" class="section">
-    <div class="section-box">
-      <h2>Resume</h2>
-      <p>You can download my latest resume here:</p>
-      <a href="./bharath_final.pdf" class="btn" download>
-        <i class="fas fa-download"></i>
-        <span>Download Resume</span>
-      </a>
-    </div>
-  </section>
-
-  <section id="projects" class="section">
-    <div class="section-box">
-      <h2>Projects</h2>
-      <div class="projects-container">
-        <div class="project-card">
-          <h3><a href="https://github.com/Bharath-56/quickreserve" target="_blank">QuickReserve</a></h3>
-          <p>Full-stack Train Ticket Booking web app using Node.js, Express, PostgreSQL, and vanilla JavaScript. Features include secure login, email verification, search, and admin dashboard.</p>
-        </div>
-        <div class="project-card">
-          <h3><a href="https://github.com/Bharath-56/Project_Management_tool" target="_blank">Project Management Tool</a></h3>
-          <p>Lightweight management tool using Node.js, Express, PostgreSQL, WebSockets, and JS. Features task boards, real-time chat, Gantt charts, and role-based access.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="certifications" class="section">
-    <div class="section-box">
-      <h2>Certifications</h2>
-      <div class="cert-container">
-        <div class="cert-card">
-          <h3>Full Stack Web Development</h3>
-          <p>UDEMY | June 2025</p>
-          <a href="./c.jpg" class="btn" target="_blank">
-            <i class="fas fa-external-link-alt"></i>
-            <span>View Certificate</span>
-          </a>
-        </div>
-       <div class="cert-card">
-          <h3>AWS Cloud Practitioner Essentials </h3>
-          <p>AWS | July 2025</p>
-          <a href="./e.png" class="btn" target="_blank">
-            <i class="fas fa-external-link-alt"></i>
-            <span>View Certificate</span>
-          </a>
-        </div>
-        <div class="cert-card">
-          <h3>Introduction to Computers, OS & Security</h3>
-          <p>COURSERA | July 2025</p>
-          <a href="./a.png" class="btn" target="_blank">
-            <i class="fas fa-external-link-alt"></i>
-            <span>View Certificate</span>
-          </a>
-        </div>
-        <div class="cert-card">
-          <h3>Linux for Beginners</h3>
-          <p>Infosys Springboard | Nov 2024</p>
-          <a href="./b.png" class="btn" target="_blank">
-            <i class="fas fa-external-link-alt"></i>
-            <span>View Certificate</span>
-          </a>
-        </div>
-        <div class="cert-card">
-          <h3>Introduction to Cloud Computing</h3>
-          <p>Infosys Springboard | May 2025</p>
-          <a href="./d.png" class="btn" target="_blank">
-            <i class="fas fa-external-link-alt"></i>
-            <span>View Certificate</span>
-          </a>
-        </div>
-      </div>
+      <p>
+        Hello, I’m Bharath S M, a passionate Electronics and Communication Engineering student with a strong interest in full-stack development and software systems. I specialize in building practical, user-focused applications and enjoy combining technical knowledge with creative problem-solving to develop impactful solutions.
+      </p>
     </div>
   </section>
 
@@ -131,35 +54,97 @@
       <div class="skills-container">
         <div class="skill-category">
           <h3>Programming Languages</h3>
-          <ul>
-            <li>C++</li>
-            <li>OOPs</li>
-            <li>JavaScript</li>
-            <li>Python</li>
-          </ul>
-        </div>
-         <div class="skill-category">
-          <h3>Cloud and Networking</h3>
-          <ul>
-            <li>Cloud Computing</li>
-            <li>Computer Networks</li>
-          </ul>
+          <ul><li>+ C++</li><li>+ JavaScript</li><li>+ Python</li></ul>
         </div>
         <div class="skill-category">
           <h3>Web Development</h3>
-          <ul>
-            <li>HTML & CSS</li>
-            <li>Node.js & Express</li>
-            <li>PostgreSQL</li>
-          </ul>
+          <ul><li> + HTML & CSS</li><li>+ Node.js & Express</li><li>+ PostgreSQL</li></ul>
         </div>
         <div class="skill-category">
           <h3>Tools & Platforms</h3>
-          <ul>
-            <li>Git & GitHub</li>
-            <li>pgAdmin</li>
-            <li>Render & Railway</li>
-          </ul>
+          <ul><li>+ Git & GitHub</li><li>+ pgAdmin</li><li> + Render & Railway</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="section-box">
+      <h2>Projects</h2>
+      <div class="projects-container">
+        <div class="project-card">
+          <h3><a href="https://github.com/Bharath-56/quickreserve" target="_blank">QuickReserve</a></h3>
+          <p>Train Ticket Booking web app using Node.js, PostgreSQL, with secure login, email verification, and admin dashboard.</p>
+        </div>
+        <div class="project-card">
+          <h3><a href="https://github.com/Bharath-56/Project_Management_tool" target="_blank">Project Management Tool</a></h3>
+          <p>Management tool with real-time collaboration features built using WebSockets and Node.js.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="section">
+    <div class="section-box">
+      <h2>Education</h2>
+      <div class="education-container">
+        <div class="education-card">
+          <h3>NMIT, Bangalore</h3>
+          <p>B.E. in ECE</p>
+          <p><strong>2022 – Present</strong> | CGPA: 8.39</p>
+        </div>
+        <div class="education-card">
+          <h3>Sri Vani PU College</h3>
+          <p>PCMB</p>
+          <p><strong>2020 – 2022</strong> | 91.83%</p>
+        </div>
+        <div class="education-card">
+          <h3>SDUIRHS School</h3>
+          <p>State Board</p>
+          <p><strong>2019 – 2020</strong> | 88.96%</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="certifications" class="section">
+    <div class="section-box">
+      <h2>Certificates</h2>
+      <div class="cert-container">
+        <div class="cert-card">
+          <h3>Full Stack Web Development</h3>
+          <p>UDEMY | June 2025</p>
+          <a href="./c.jpg" class="btn" target="_blank">
+            <i class="fas fa-external-link-alt"></i> View Certificate
+          </a>
+        </div>
+        <div class="cert-card">
+          <h3>AWS Cloud Practitioner Essentials</h3>
+          <p>AWS | July 2025</p>
+          <a href="./e.png" class="btn" target="_blank">
+            <i class="fas fa-external-link-alt"></i> View Certificate
+          </a>
+        </div>
+        <div class="cert-card">
+          <h3>Introduction to Computers, OS & Security</h3>
+          <p>Coursera | July 2025</p>
+          <a href="./a.png" class="btn" target="_blank">
+            <i class="fas fa-external-link-alt"></i> View Certificate
+          </a>
+        </div>
+        <div class="cert-card">
+          <h3>Linux for Beginners</h3>
+          <p>Infosys Springboard | Nov 2024</p>
+          <a href="./b.png" class="btn" target="_blank">
+            <i class="fas fa-external-link-alt"></i> View Certificate
+          </a>
+        </div>
+        <div class="cert-card">
+          <h3>Introduction to Cloud Computing</h3>
+          <p>Infosys Springboard | May 2025</p>
+          <a href="./d.png" class="btn" target="_blank">
+            <i class="fas fa-external-link-alt"></i> View Certificate
+          </a>
         </div>
       </div>
     </div>
@@ -169,11 +154,10 @@
     <div class="section-box">
       <h2>Contact</h2>
       <div class="contact-icons">
-        <a href="mailto:bharathmanu1235@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-        <a href="https://github.com/Bharath-56" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/bharathsm0304" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://wa.me/918073293765" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://www.instagram.com/_bharath_kuruba_" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="mailto:bharathmanu1235@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/Bharath-56" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/bharathsm0304" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://wa.me/918073293765" target="_blank"><i class="fab fa-whatsapp"></i></a>
       </div>
     </div>
   </section>
@@ -184,12 +168,11 @@
 
   <script>
     const toggleBtn = document.getElementById("menuToggle");
-    const mobileNav = document.getElementById("mobileNav");
+    const navLinks = document.getElementById("navLinks");
 
     toggleBtn.addEventListener("click", () => {
-      mobileNav.classList.toggle("show");
+      navLinks.classList.toggle("show");
     });
   </script>
-
 </body>
 </html>
