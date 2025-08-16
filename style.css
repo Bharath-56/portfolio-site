@@ -51,7 +51,7 @@ body {
 }
 
 .nav-links li a:hover {
-  color: #328CC1;
+  color: #D9B310;
 }
 
 .menu-toggle {
@@ -140,6 +140,7 @@ body {
   padding-bottom: 0.5rem;
 }
 
+/* ================== SKILLS ================== */
 .skills-container {
   display: flex;
   flex-wrap: wrap;
@@ -186,6 +187,7 @@ body {
   }
 }
 
+/* ================== PROJECTS ================== */
 .projects-container {
   display: flex;
   flex-direction: column;
@@ -198,6 +200,23 @@ body {
   padding: 1.2rem;
   border-radius: 10px;
   border: 1px solid #328CC1;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Keep base shadow */
+  transition: none; /* Removed hover animation */
+}
+
+/* 👇 Removed hover effect */
+.project-card:hover {
+  transform: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-card img.project-img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
 }
 
 .project-card h3 a {
@@ -210,11 +229,59 @@ body {
 .project-card p {
   margin-top: 0.5rem;
   color: #DEF2F1;
+  font-size: 0.95rem;
+  line-height: 1.4;
 }
 
+#projects {
+  padding: 20px;
+}
+
+#projects h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#projects p {
+  text-align: left;   /* Aligns content to the left */
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .projects-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .projects-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.project-card h3 a {
+  text-decoration: none;
+  color: #FEFFFF;   /* Default color */
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.project-card h3 a:hover {
+  color: #D9B310;   /* Change on hover */
+}
+
+.project-card h3 a:active {
+  color: #D9B310;   /* Change on click */
+}
+
+/* ================== EDUCATION ================== */
 .education-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 cards in a row on desktop */
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-top: 1.5rem;
   justify-items: center;
@@ -244,6 +311,7 @@ body {
   }
 }
 
+/* ================== CERTIFICATES ================== */
 .cert-container {
   display: flex;
   flex-wrap: wrap;
@@ -299,6 +367,7 @@ body {
   font-size: 1rem;
 }
 
+/* ================== CONTACT ================== */
 .contact-icons {
   margin-top: 1.5rem;
   display: flex;
@@ -317,6 +386,7 @@ body {
   color: #D9B310;
 }
 
+/* ================== FOOTER ================== */
 footer {
   text-align: center;
   padding: 1rem;
@@ -325,6 +395,7 @@ footer {
   background-color: #1D2731;
 }
 
+/* ================== RESPONSIVE NAVBAR & HERO ================== */
 @media screen and (max-width: 768px) {
   .nav-links {
     display: none;
