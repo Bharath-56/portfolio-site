@@ -187,7 +187,6 @@ body {
   }
 }
 
-/* ================== PROJECTS ================== */
 .projects-container {
   display: flex;
   flex-direction: column;
@@ -201,16 +200,11 @@ body {
   border-radius: 10px;
   border: 1px solid #328CC1;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Keep base shadow */
-  transition: none; /* Removed hover animation */
-}
-
-/* 👇 Removed hover effect */
-.project-card:hover {
-  transform: none;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* Removed hover effect for project-card */
 .project-card img.project-img {
   width: 100%;
   max-height: 200px;
@@ -219,9 +213,10 @@ body {
   margin-bottom: 1rem;
 }
 
+/* Project title - always gold, no hover/active effect */
 .project-card h3 a {
   text-decoration: none;
-  color: #FEFFFF;
+  color: #D9B310;   /* Always gold */
   font-weight: 600;
   font-size: 1.1rem;
 }
@@ -243,7 +238,7 @@ body {
 }
 
 #projects p {
-  text-align: left;   /* Aligns content to the left */
+  text-align: left;
   line-height: 1.6;
   margin-bottom: 20px;
 }
@@ -262,21 +257,27 @@ body {
   }
 }
 
-.project-card h3 a {
-  text-decoration: none;
-  color: #FEFFFF;   /* Default color */
+
+.source-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #328CC1;
+  color: #FEFFFF;
+  font-size: 0.9rem;
   font-weight: 600;
-  font-size: 1.1rem;
-  transition: color 0.3s ease; /* Smooth color transition */
+  border-radius: 6px;
+  text-decoration: none;
+  border: 1px solid #328CC1;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.project-card h3 a:hover {
-  color: #D9B310;   /* Change on hover */
+.source-btn:hover {
+  background-color: #0B3C5D;
+  color: #D9B310;
 }
 
-.project-card h3 a:active {
-  color: #D9B310;   /* Change on click */
-}
+
 
 /* ================== EDUCATION ================== */
 .education-container {
