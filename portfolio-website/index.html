@@ -2,49 +2,99 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bharath S M | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
-  <header>
-    <div class="header-content">
-      <div class="profile-pic">
-        <img src="./assets/your-image.jpg" alt="Bharath S M" />
-      </div>
-      <div class="intro-text">
-        <h1>Bharath S M</h1>
-        <p>ECE Student | Developer | Tech Enthusiast</p>
-      </div>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#resume">Resume</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
+
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-title">Portfolio</div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#certifications">Certificates</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <header class="hero">
+    <div class="hero-content">
+      <img src="./your-image.jpg" alt="Profile" class="hero-img" />
+      <h1 class="hero-name">Bharath S M</h1>
+      <p class="hero-subtitle">
+        <span>ECE Student</span> | <span>Developer</span> | <span>Tech Enthusiast</span>
+      </p>
+      <a href="./bharath_final.pdf" class="btn" download>
+        <i class="fas fa-download"></i> Download Resume
+      </a>
     </div>
   </header>
 
   <section id="about" class="section">
     <div class="section-box">
       <h2>About Me</h2>
-      <p>Hi! I'm Bharath S M, an Electronics and Communication Engineering student with a passion for full-stack development and problem-solving. Focused on building efficient, real-world software solutions.</p>
+      <p>
+        Hello, I’m Bharath S M, a passionate Electronics and Communication Engineering student with a strong interest in full-stack development and software systems. I specialize in building practical, user-focused applications and enjoy combining technical knowledge with creative problem-solving to develop impactful solutions.
+      </p>
     </div>
   </section>
 
-  <section id="resume" class="section">
+    
+  <section id="education" class="section">
     <div class="section-box">
-      <h2>Resume</h2>
-      <p>You can download my latest resume here:</p>
-      <a href="./assets/resume.pdf" class="btn" download title="Download Resume PDF">
-        <i class="fas fa-download"></i>
-        <span>Download Resume</span>
-      </a>
+      <h2>Education</h2>
+      <div class="education-container">
+        <div class="education-card">
+          <h3>NMIT, Bangalore</h3>
+          <p>B.E. in ECE</p>
+          <p><strong>2022 – Present</strong> | CGPA: 8.31</p>
+        </div>
+        <div class="education-card">
+          <h3>Sri Vani PU College</h3>
+          <p>PCMB</p>
+          <p><strong>2020 – 2022</strong> | 91.83%</p>
+        </div>
+        <div class="education-card">
+          <h3>SDUIRHS School</h3>
+          <p>State Board</p>
+          <p><strong>2019 – 2020</strong> | 88.96%</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="skills" class="section">
+    <div class="section-box">
+      <h2>Skills</h2>
+      <div class="skills-container">
+        <div class="skill-category">
+          <h3>Programming Languages</h3>
+          <ul><li>C++</li><li>Python</li><li>JavaScript</li></ul>
+        </div>
+        <div class="skill-category">
+          <h3>Web Development</h3>
+          <ul><li>HTML</li><li>CSS & Bootstrap</li><li> Node.js & Express</li></ul>
+        </div>
+         <div class="skill-category">
+          <h3>Databases</h3>
+          <ul><li>MySQL</li><li>PostgreSQL</li><li>MongoDB</li></ul>
+        </div>
+        <div class="skill-category">
+          <h3>Tools & Platforms</h3>
+          <ul><li>Git & GitHub</li><li>pgAdmin</li><li>Postman</li></ul>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -53,12 +103,59 @@
       <h2>Projects</h2>
       <div class="projects-container">
         <div class="project-card">
-          <h3><a href="https://github.com/Bharath-56/quickreserve">QuickReserve</a></h3>
-          <p>Full-stack Train Ticket Booking web app using Node.js, Express, PostgreSQL, and vanilla JavaScript. Features include secure login, email verification, search, and admin dashboard.</p>
+          <h3><a href="https://github.com/Bharath-56/quickreserve" target="_blank">QuickReserve</a></h3>
+          <p>Train ticket booking app using Node.js, Express, PostgreSQL, and Vanilla JS.</p>
+        </div>
+         <div class="project-card">
+          <h3><a href="https://github.com/Bharath-56/sms_spamdetector_aiml" target="_blank">AI-Powered SMS Spam Classifier</a></h3>
+          <p>Built an AIML based SMS Spam Detection system using Naive Bayes, with Python, Flask, and Streamlit for real-time message classification.</p>
         </div>
         <div class="project-card">
-          <h3><a href="https://github.com/Bharath-56/Project_Management_tool">Project Management Tool</a></h3>
-          <p>Lightweight management tool using Node.js, Express, PostgreSQL, WebSockets, and JS. Features task boards, real-time chat, Gantt charts, and role-based access.</p>
+          <h3><a href="https://github.com/Bharath-56/Project_Management_tool" target="_blank">Project Management Tool</a></h3>
+          <p>A simple and efficient Project Management Tool built with Node.js, Express.js, MySQL, Web Sockets, Gnatt chart and Vanilla JS.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="certifications" class="section">
+    <div class="section-box">
+      <h2>Certificates</h2>
+      <div class="cert-container">
+        <div class="cert-card">
+          <h3>Full Stack Web Development</h3>
+          <p>UDEMY | June 2025</p>
+          <a href="./c.jpg" class="btn" target="_blank">
+            <i class="fas fa-external-link-alt"></i> View Certificate
+          </a>
+        </div>
+        <div class="cert-card">
+          <h3>AWS Cloud Practitioner Essentials</h3>
+          <p>AWS | July 2025</p>
+          <a href="./e.png" class="btn" target="_blank">
+            <i class="fas fa-external-link-alt"></i> View Certificate
+          </a>
+        </div>
+        <div class="cert-card">
+          <h3>Introduction to Computers, OS & Security</h3>
+          <p>Coursera | July 2025</p>
+          <a href="./a.png" class="btn" target="_blank">
+            <i class="fas fa-external-link-alt"></i> View Certificate
+          </a>
+        </div>
+        <div class="cert-card">
+          <h3>Linux for Beginners</h3>
+          <p>Infosys Springboard | Nov 2024</p>
+          <a href="./b.png" class="btn" target="_blank">
+            <i class="fas fa-external-link-alt"></i> View Certificate
+          </a>
+        </div>
+        <div class="cert-card">
+          <h3>Introduction to Cloud Computing</h3>
+          <p>Infosys Springboard | May 2025</p>
+          <a href="./d.png" class="btn" target="_blank">
+            <i class="fas fa-external-link-alt"></i> View Certificate
+          </a>
         </div>
       </div>
     </div>
@@ -68,28 +165,27 @@
     <div class="section-box">
       <h2>Contact</h2>
       <div class="contact-icons">
-        <a href="mailto:bharathmanu1235@gmail.com" target="_blank" title="Email">
-          <i class="fas fa-envelope"></i>
-        </a>
-         <a href="https://github.com/Bharath-56" target="_blank" title="GitHub">
-          <i class="fab fa-github"></i>
-        </a>
-           <a href="https://www.linkedin.com/in/bharathsm0304" target="_blank" title="LinkedIn">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="https://wa.me/+91 8073293765" target="_blank" title="WhatsApp">
-          <i class="fab fa-whatsapp"></i>
-        </a>
-        <a href="https://www.instagram.com/_bharath_kuruba_" target="_blank" title="Instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
-     
+        <a href="mailto:bharathmanu1235@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/Bharath-56" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/bharathsm0304" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://wa.me/918073293765" target="_blank"><i class="fab fa-whatsapp"></i></a>
       </div>
     </div>
   </section>
 
+
   <footer>
-    <p>© 2025 Bharath S M. All rights reserved.</p>git initial-scale
+    <p>© 2025 Bharath S M. All rights reserved.</p>
   </footer>
+
+
+  <script>
+    const toggleBtn = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    toggleBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+  </script>
 </body>
 </html>
